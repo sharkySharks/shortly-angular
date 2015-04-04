@@ -7,9 +7,11 @@ angular.module('shortly.shorten', [])
     Links.addLink($scope.link)
     .then(function(){
       $scope.link.url = '';
+      $location.path('/links');
     })
     .catch(function(err){
       throw err;
     })
   };
+
 });

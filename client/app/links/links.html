@@ -1,10 +1,21 @@
-<div class = "navigation">
+<div class = "navigation" ng-controller='AuthController'>
   <ul>
     <li><a href='#/links' class = 'link'>All Links </a></li>
     <li><a href="#/shorten" class = 'link'>Shorten</a></li>
-    <li><a href="#/logout" class ='link'>Logout</a></li>
+    <li><a href="#/signin"  ng-click="signout()" class ='link'>Logout</a></li>
   </ul>
 </div>
 <div id='container' ng-controller="LinksController">
-  <!-- Your html here -->
+  <div ng-repeat="link in data.links | filter:search | orderBy: 'created_at'">
+  <img src="assets/redirect_icon.png">
+  <div class="info">
+    <div class="visits">
+      <span class="count">{{link.visits}}</span>Visits
+    </div>
+    <div class="title">{{link.title}}</div>
+    <div class="original">{{link.url}}</div>
+
+    <a href="http://localhost:3000/api/links/{{ link.code }}"> {{link.base_url}}/{{link.code}}</a>
+  </div>
+  </div>
 </div>

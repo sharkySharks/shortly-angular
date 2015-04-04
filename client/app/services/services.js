@@ -10,7 +10,7 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function(resp){
-      return resp.data.link;
+      return resp.data;
     });
   }; 
 

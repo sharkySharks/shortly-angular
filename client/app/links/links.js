@@ -4,10 +4,16 @@ angular.module('shortly.links', [])
   // Your code here
   
   $scope.data = {};
-  $scope.getLinks = function (item) {
-    Links.getLinks($scope.link)
-      //.then ...
-      $scope.data.link = {link: item}
+  $scope.getLinks = function () {
+    Links.getLinks()
+      .then(function(links){
+        $scope.data.links = links;
+      })
+      .catch(function(err){
+        throw err;
+      })
   };
   $scope.getLinks();
+
+  $scope.name = "LinksController";
 });
