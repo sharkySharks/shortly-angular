@@ -12,10 +12,14 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     .when('/signup', {
-      templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
+      templateUrl: 'app/auth/signup.html', // sets the controller and template for the endpoint after /.when'
+      controller: 'AuthController'          // front end route, referring to the browser url
     })
     // Your code here
+    .when('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    })
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
