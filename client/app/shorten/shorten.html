@@ -1,6 +1,16 @@
-<div id='container'>
+<div class = "navigation">
+  <ul>
+    <li><a href='#/links' class = 'link'>All Links </a></li>
+    <li><a href="#/shorten" class = 'link'>Shorten</a></li>
+    <li><a href="#/logout" class ='link'>Logout</a></li>
+  </ul>
+</div>
+<div id='container' ng-controller='ShortenController'>
 <!-- Your code here -->
-
+  <form name="linkForm" ng-submit='addLink()'>
+    <input type='text' placeholder = "add link here" ng-model='link.url'>
+    <button>add link</button>
+  </form>
 </div>
 
 
